@@ -9,7 +9,7 @@ using namespace std;
 ArbolBinario::ArbolBinario() 
 {
     cima = NULL;
-    longitud = 0;
+    altura = 0;
 
 }
 
@@ -62,7 +62,12 @@ Proceso ArbolBinario::raiz() {
 
 
 int ArbolBinario::getAltura() {
-    return getProfundidad(cima);
+    altura=getProfundidad(cima);
+    return altura;
+}
+
+void ArbolBinario::setAltura() {
+    altura=getProfundidad(cima);
 }
 
 

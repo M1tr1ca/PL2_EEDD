@@ -8,7 +8,7 @@ class ArbolBinario
 {
 private:
     NodoArbol* cima;
-    int longitud;
+    int altura;
 
 public:
     ArbolBinario();
@@ -19,6 +19,7 @@ public:
     ArbolBinario der();
     Proceso raiz();
     int getAltura();
+    void setAltura();
     int getProfundidad(NodoArbol* nodo);
 
     void eliminarNodos(NodoArbol* raiz);//No pertenece a la especificación
