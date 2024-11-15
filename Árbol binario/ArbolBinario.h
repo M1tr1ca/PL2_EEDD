@@ -15,8 +15,8 @@ public:
     ~ArbolBinario();
 
     bool esVacio();
-    ArbolBinario izq();
-    ArbolBinario der();
+    NodoArbol* izq();
+    NodoArbol* der();
     Proceso raiz();
     int getAltura();
     void setAltura();

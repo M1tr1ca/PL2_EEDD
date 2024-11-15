@@ -19,43 +19,41 @@ ArbolBinario::~ArbolBinario()
     cima = nullptr; 
 }
 
-void ArbolBinario::eliminarNodos(NodoArbol* raiz) 
+void ArbolBinario::eliminarNodos(NodoArbol* cima) 
 {
-    if (raiz != nullptr) 
+    if (cima != nullptr) 
     {
-        eliminarNodos(raiz->izquierda);
-        eliminarNodos(raiz->derecha);
+        eliminarNodos(cima->izquierda);
+        eliminarNodos(cima->derecha);
 
-        delete raiz;
+        delete cima;
     }
 }
 
 
 bool ArbolBinario::esVacio() {
-    return raiz == nullptr;
+    return cima == nullptr;
 }
 
-ArbolBinario ArbolBinario::izq() {
-    ArbolBinario subArbol;
-    if (cima != nullptr) {
-        subArbol.cima = cima->izquierda;
+NodoArbol* ArbolBinario::izq() {
+    if (cima == nullptr) {
+        throw runtime_error("No hay hoja en la parte izquierda.");
     }
-    return subArbol;
+    return cima->izquierda;
 }
 
 
-ArbolBinario ArbolBinario::der() {
-    ArbolBinario subArbol;
-    if (cima != nullptr) {
-        subArbol.cima = cima->derecha;
+NodoArbol* ArbolBinario::der() {
+    if (cima == nullptr) {
+        throw runtime_error("No hay hoja en la parte derecha.");
     }
-    return subArbol;
+    return cima->derecha;
 }
 
 
 Proceso ArbolBinario::raiz() {
     if (cima == nullptr) {
-        throw std::runtime_error("El árbol está vacío, no hay raíz.");
+        throw runtime_error("El árbol está vacío, no hay raíz.");
     }
     return cima->valor;
 }
