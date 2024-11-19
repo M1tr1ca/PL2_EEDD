@@ -7,28 +7,34 @@
 class ArbolBinario
 {
 private:
-    NodoArbol* cima;
+
     int altura;
+    ArbolBinario * raiz;
+
+    Proceso valor;
+    ArbolBinario * izquierda;
+    ArbolBinario * derecha;
 
 public:
     ArbolBinario();
+    ArbolBinario(Proceso elemento, ArbolBinario *izq = NULL, ArbolBinario *der = NULL,int altura=0,ArbolBinario *raiz = NULL);
     ~ArbolBinario();
 
     bool esVacio();
-    NodoArbol* izq();
-    NodoArbol* der();
-    Proceso raiz();
+    ArbolBinario* izq();
+    ArbolBinario* der();
+    Proceso getRaiz();
     int getAltura();
     void setAltura();
     int getProfundidad(NodoArbol* nodo);
 
-    void eliminarNodos(NodoArbol* raiz);//No pertenece a la especificación
-    void mostrarArbolPreorden(NodoArbol* nodo);//Puedes recorrerlo desde cualquier raiz
-    void mostrarArbolPostorden(NodoArbol* nodo);//Puedes recorrerlo desde cualquier raiz
-    void mostrarArbolInorden(NodoArbol* nodo);//Puedes recorrerlo desde cualquier raiz
+    void eliminarNodos(ArbolBinario* raiz);//No pertenece a la especificación
+    void mostrarArbolPreorden(ArbolBinario* nodo);//Puedes recorrerlo desde cualquier raiz
+    void mostrarArbolPostorden(ArbolBinario* nodo);//Puedes recorrerlo desde cualquier raiz
+    void mostrarArbolInorden(ArbolBinario* nodo);//Puedes recorrerlo desde cualquier raiz
 
 
 
 };
-
-#endif // ARBOLBINARIO_H
+typedef NodoArbol *anodo;
+#endif 
