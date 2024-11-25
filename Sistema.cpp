@@ -2,13 +2,13 @@
 #include "Sistema.h"
 #include "Proceso.h"
 #include "Pila.h"
-#include "Lista.h"
+#include "ListaNucleos.h"
 #include "Nucleo.h"
 
 Sistema::Sistema()
 {
     // pilaProcesos = Pila();
-    // nucleos = Lista();
+    // nucleos = ListaNucleos();
     minutos = 0;
     crearProcesos();
 }

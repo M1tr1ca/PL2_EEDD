@@ -1,17 +1,17 @@
 #include <iostream>
-#include "Lista.h"
-#include "NodoLista.h"
+#include "ListaNucleos.h"
+#include "NodoListaNucleos.h"
 #include "Nucleo.h"
 
 using namespace std;
 
-Lista::Lista()
+ListaNucleos::ListaNucleos()
 {
-    cima = new NodoLista();
+    cima = new NodoListaNucleos();
     longitud = 1;
 }
 
-Lista::~Lista()
+ListaNucleos::~ListaNucleos()
 {
     while (cima)
     {
@@ -21,21 +21,21 @@ Lista::~Lista()
     }
 }
 
-bool Lista::esVacia()
+bool ListaNucleos::esVacia()
 {
     return cima == NULL;
 }
 
-void Lista::izquierda(Nucleo p)
+void ListaNucleos::izquierda(Nucleo p)
 {
-    lnodo nuevo = new NodoLista(p, cima);
+    lnodo nuevo = new NodoListaNucleos(p, cima);
     cima = nuevo;
     longitud++;
 }
 
-void Lista::derecha(Nucleo p)
+void ListaNucleos::derecha(Nucleo p)
 {
-    lnodo nuevo = new NodoLista(p, NULL);
+    lnodo nuevo = new NodoListaNucleos(p, NULL);
 
     if (esVacia())
     {
@@ -54,7 +54,7 @@ void Lista::derecha(Nucleo p)
     longitud++;
 }
 
-Nucleo Lista::prim()
+Nucleo ListaNucleos::prim()
 {
     if (esVacia())
     {
@@ -64,7 +64,7 @@ Nucleo Lista::prim()
     return cima->valor;
 }
 
-Nucleo Lista::ult()
+Nucleo ListaNucleos::ult()
 {
     if (esVacia())
     {
@@ -80,7 +80,7 @@ Nucleo Lista::ult()
     return actual->valor;
 }
 
-void Lista::resto()
+void ListaNucleos::resto()
 {
     if (esVacia())
     {
@@ -93,7 +93,7 @@ void Lista::resto()
     longitud--;
 }
 
-void Lista::mostrarTodo()
+void ListaNucleos::mostrarTodo()
 {
     if (esVacia())
     {
@@ -111,7 +111,7 @@ void Lista::mostrarTodo()
     cout << endl;
 }
 
-void Lista::eult()
+void ListaNucleos::eult()
 {
     if (esVacia())
     {
@@ -141,7 +141,7 @@ void Lista::eult()
     longitud--;
 }
 
-void Lista::reducirTiempoVida()
+void ListaNucleos::reducirTiempoVida()
 {
     if (esVacia())
     {
@@ -168,7 +168,7 @@ void Lista::reducirTiempoVida()
     }
 }
 
-Nucleo *Lista::buscarMenosCola()
+Nucleo *ListaNucleos::buscarMenosCola()
 {
     if (esVacia())
     {
@@ -189,7 +189,7 @@ Nucleo *Lista::buscarMenosCola()
     return &menor->valor;
 }
 
-Nucleo *Lista::buscarMasCola()
+Nucleo *ListaNucleos::buscarMasCola()
 {
     if (esVacia())
     {
@@ -210,7 +210,7 @@ Nucleo *Lista::buscarMasCola()
     return &mayor->valor;
 }
 
-int Lista::nucleosLibres()
+int ListaNucleos::nucleosLibres()
 {
     if (esVacia())
     {
@@ -231,7 +231,7 @@ int Lista::nucleosLibres()
     return libres;
 }
 
-void Lista::eliminarNucleosVacios()
+void ListaNucleos::eliminarNucleosVacios()
 {
     lnodo actual = cima;
     while (!esVacia() && !actual->valor.estaOcupado())
@@ -246,7 +246,7 @@ void Lista::eliminarNucleosVacios()
 
     if (esVacia())
     {
-        cima = new NodoLista(Nucleo(), NULL);
+        cima = new NodoListaNucleos(Nucleo(), NULL);
     }
     else
     {
@@ -269,7 +269,7 @@ void Lista::eliminarNucleosVacios()
     }
 }
 
-int Lista::getLongitud()
+int ListaNucleos::getLongitud()
 {
     return longitud;
 }

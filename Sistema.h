@@ -5,7 +5,7 @@
 
 #include "Proceso.h"
 #include "Pila.h"
-#include "Lista.h"
+#include "ListaNucleos.h"
 #include <iostream>
 
 using namespace std;
@@ -14,7 +14,7 @@ class Sistema
 {
 private:
     Pila pilaProcesos; // Pila de procesos ordenados por inicio
-    Lista nucleos;     // Lista de procesos en ejecucion
+    ListaNucleos nucleos;     // ListaNucleos de procesos en ejecucion
     int minutos;       // Minutos transcurridos
 
 public:

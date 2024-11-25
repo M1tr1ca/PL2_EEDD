@@ -1,18 +1,18 @@
 #ifndef LISTA_H
 #define LISTA_H
-#include "NodoLista.h"
+#include "NodoListaNucleos.h"
 #include "Proceso.h"
 #include "Nucleo.h"
 
-class Lista
+class ListaNucleos
 {
 private:
-    NodoLista *cima;
+    NodoListaNucleos *cima;
     int longitud;
 
 public:
-    Lista();
-    ~Lista();
+    ListaNucleos();
+    ~ListaNucleos();
 
     bool esVacia();
     void izquierda(Nucleo p);
