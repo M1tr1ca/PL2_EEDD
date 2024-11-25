@@ -1,5 +1,5 @@
-#ifndef LISTA_H
-#define LISTA_H
+#ifndef LISTANUCLEOS_H
+#define LISTANUCLEOS_H
 #include "NodoListaNucleos.h"
 #include "Proceso.h"
 #include "Nucleo.h"

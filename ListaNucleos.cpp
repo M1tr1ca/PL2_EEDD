@@ -58,7 +58,7 @@ Nucleo ListaNucleos::prim()
 {
     if (esVacia())
     {
-        throw runtime_error("La lista está vacía");
+        throw runtime_error("La lista de núcleos está vacía");
     }
 
     return cima->valor;
@@ -68,7 +68,7 @@ Nucleo ListaNucleos::ult()
 {
     if (esVacia())
     {
-        throw runtime_error("La lista está vacía");
+        throw runtime_error("La lista de núcleos está vacía");
     }
 
     lnodo actual = cima;
@@ -84,7 +84,7 @@ void ListaNucleos::resto()
 {
     if (esVacia())
     {
-        throw runtime_error("La lista está vacía");
+        throw runtime_error("La lista de núcleos está vacía");
     }
 
     lnodo temp = cima;
@@ -97,7 +97,7 @@ void ListaNucleos::mostrarTodo()
 {
     if (esVacia())
     {
-        throw runtime_error("La lista está vacía");
+        throw runtime_error("La lista de núcleos está vacía");
     }
 
     lnodo actual = cima;
@@ -115,7 +115,7 @@ void ListaNucleos::eult()
 {
     if (esVacia())
     {
-        throw runtime_error("La lista está vacía");
+        throw runtime_error("La lista de núcleos está vacía");
     }
 
     Nucleo valor;
@@ -145,7 +145,7 @@ void ListaNucleos::reducirTiempoVida()
 {
     if (esVacia())
     {
-        throw runtime_error("La lista está vacía");
+        throw runtime_error("La lista de núcleos está vacía");
     }
 
     // Recorrer la lista y reducir el tiempo de vida de cada núcleo
@@ -172,7 +172,7 @@ Nucleo *ListaNucleos::buscarMenosCola()
 {
     if (esVacia())
     {
-        throw runtime_error("La lista está vacía");
+        throw runtime_error("La lista de núcleos está vacía");
     }
 
     lnodo actual = cima;
@@ -193,7 +193,7 @@ Nucleo *ListaNucleos::buscarMasCola()
 {
     if (esVacia())
     {
-        throw runtime_error("La lista está vacía");
+        throw runtime_error("La lista de núcleos está vacía");
     }
 
     lnodo actual = cima;
@@ -214,7 +214,7 @@ int ListaNucleos::nucleosLibres()
 {
     if (esVacia())
     {
-        throw runtime_error("La lista está vacía");
+        throw runtime_error("La lista de núcleos está vacía");
     }
 
     int libres = 0;

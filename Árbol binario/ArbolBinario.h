@@ -1,17 +1,17 @@
 #ifndef ARBOLBINARIO_H
 #define ARBOLBINARIO_H
 #include "NodoArbol.h"
-#include "Proceso.h"
+#include "ListaNucleos.h"
 
 
 class ArbolBinario
 {
 private:
 
-    int altura;
-    ArbolBinario * raiz;
+    //ArbolBinario * raiz;
 
-    Proceso valor;
+    int prioridad;
+    ListaProcesos valor;
     ArbolBinario * izquierda;
     ArbolBinario * derecha;
 
@@ -25,8 +25,6 @@ public:
     ArbolBinario* der();
     Proceso getRaiz();
     int getAltura();
-    void setAltura();
-    int getProfundidad(NodoArbol* nodo);
 
     void eliminarNodos(ArbolBinario* raiz);//No pertenece a la especificación
     void mostrarArbolPreorden(ArbolBinario* nodo);//Puedes recorrerlo desde cualquier raiz
