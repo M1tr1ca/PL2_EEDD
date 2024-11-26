@@ -76,13 +76,15 @@ void ABBProcesos::insertar(Proceso p)
     {
         if (derecha == nullptr)
         {
-            derecha = new ABBProcesos();
+            derecha = new ABBProcesos(p.getPrioridad());
         }
         derecha->insertar(p);
     }
     else
     {
         listaProcesos.izquierda(p);
+        cout << "Proceso insertado correctamente" << p.getPID() << endl;
+        listaProcesos.mostrarTodo();
     }
 }
 
@@ -90,7 +92,15 @@ void ABBProcesos::mostrarArbolPreorden(ABBProcesos *nodo)
 {
     if (nodo != nullptr)
     {
-        nodo->getProcesos().mostrarTodo();
+        if (nodo->esVacio())
+        {
+            cout << "Prioridad: " << nodo->getPrioridad() << endl;
+            cout << "No hay procesos" << endl;
+        }
+        else
+        {
+            nodo->getProcesos().mostrarTodo();
+        }
         mostrarArbolPreorden(nodo->izq());
         mostrarArbolPreorden(nodo->der());
     }
@@ -100,9 +110,19 @@ void ABBProcesos::mostrarArbolInorden(ABBProcesos *nodo)
 {
     if (nodo != nullptr)
     {
-        mostrarArbolInorden(nodo->izq());
-        listaProcesos.mostrarTodo();
-        mostrarArbolInorden(nodo->der());
+        if (nodo->izq() != nullptr)
+        {
+            mostrarArbolInorden(nodo->izq());
+        }
+        if (!nodo->esVacio())
+        {
+            cout << "Prioridad: " << nodo->getPrioridad() << endl;
+            nodo->listaProcesos.mostrarTodo();
+        }
+        if (nodo->der() != nullptr)
+        {
+            mostrarArbolInorden(nodo->der());
+        }
     }
 }
 
@@ -112,6 +132,6 @@ void ABBProcesos::mostrarArbolPostorden(ABBProcesos *nodo)
     {
         mostrarArbolPostorden(nodo->izq());
         mostrarArbolPostorden(nodo->der());
-        listaProcesos.mostrarTodo();
+        nodo->listaProcesos.mostrarTodo();
     }
 }

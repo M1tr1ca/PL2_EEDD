@@ -42,6 +42,8 @@ public:
 
     // Terminar proceso y meter el siguiente de la cola
     Proceso terminarProcesoActual();
+
+    void aumentarTiempoEjecucion();
 };
 
 #endif // NUCLEO_H

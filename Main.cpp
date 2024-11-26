@@ -9,34 +9,45 @@ void mostrarMenu(int minutos)
 	int horas = minutos / 60 % 24;
 	int min = minutos % 60;
 
-	cout << "                                      ggg                      " << endl;
-	cout << "                               _gg___g@@@__  __                " << endl;
-	cout << "                               %@@@@@@&&@@@g@@@y               " << endl;
-	cout << "                               _@@@*`     *@@@\"                +----------------------------------------------------------------+" << endl;
-	cout << "             ____           ,gg@@@          Q@g                |                    +-------------------+                       |" << endl;
-	cout << "            J@@@@      g_   g@@@@[          ]@@@@@             |                    |     * " << (horas >= 10 ? "" : "0") << horas << ":" << (min >= 10 ? "" : "0") << min << " *     |                       |" << endl;
-	cout << "            _@@@@gg,__@@@@y   `@@g          g@@MMF             |                    +-------------------+                       |" << endl;
-	cout << "     _gg__,g@@@@@@@@@@@@@F     ]@@g_      _g@@`                |                                                                |" << endl;
-	cout << "    .@@@@@@@@M*\"``\"*M@@@@g    g@@@@@@gggg@@@@@_                |     +----------------------------------------------------+     |" << endl;
-	cout << "     \"M@@@@M          \"@@@g__,,%M` \"M@@@M*\"\"0@*                |     |                   SYSTEM MENU                      |     |" << endl;
-	cout << "      q@@@F             @@@@@@@      @@@ gggg,                 |     +----------------------------------------------------+     |" << endl;
-	cout << "      g@@@              ]@@@@MM`_        @@@@$                 |     |  1. Crear la pila de procesos                      |     |" << endl;
-	cout << "   @@@@@@@              g@@@  _g@@_  __,g@@@@g_     __         |     |  2. Mostrar procesos en la pila                    |     |" << endl;
-	cout << "   $@@@@@@g            ,@@@F *@@@@@@@@@@@@@@@@@@g__g@@g_       |     |  3. Borrar pila de procesos                        |     |" << endl;
-	cout << "    `  \"@@@g_        _g@@@@@g_ %@@@@@@@MMMMMN@@@@@@@@@@@       |     |  4. Simular el paso de N minutos                   |     |" << endl;
-	cout << "        '@@@@@gggggg@@@@@@@@@F g@@@@M`        `M@@@@@P`        |     |  5. Mostrar datos lista nucleos                    |     |" << endl;
-	cout << "        g@@@@@@@@@@@@@M\"  \"*`_@@@@P              %@@@g         |     |  6. Consultar nucleos con mas y menos procesos     |     |" << endl;
-	cout << "        N@@@` `\"\"0@@@[   g@@@@@@@@                $@@@_        |     |  7. Consultar numero de nucleos operativos         |     |" << endl;
-	cout << "          \"      J@@@&   @@@@@@@@L                ]@@@@gggg    |     |  8. Ejecutar todos los procesos                    |     |" << endl;
-	cout << "                         \"**M@@@@L                ]@@@@@@@@    |     |  0. Salir                                          |     |" << endl;
-	cout << "                             ]@@@@               _@@@@MMN&F    |     +----------------------------------------------------+     |" << endl;
-	cout << "                              %@@@@_            ,@@@@F         |          +------------------------------------------+          |" << endl;
-	cout << "                             ,@@@@@@gg__    __g@@@@@F          |          |  Selecciona una opcion y presiona Enter  |          |" << endl;
-	cout << "                            @@@@@@@@@@@@@@@@@@@@@@@@g_         |          +------------------------------------------+          |" << endl;
-	cout << "                             %@@*``*&@@@@@@@@@&MN@@@@@         +----------------------------------------------------------------+" << endl;
-	cout << "                                      $@@@@M`    '0@*          " << endl;
-	cout << "                                      @@@@@                    " << endl;
-	cout << "                                      \"\"\"*\"" << endl;
+	cout << "" << endl;
+	cout << "" << endl;
+	cout << "" << endl;
+	cout << " +----------------------------------------------------------------+" << endl;
+	cout << "|                    +-------------------+                       |" << endl;
+	cout << "|                    |     * " << (horas >= 10 ? "" : "0") << horas << ":" << (min >= 10 ? "" : "0") << min << " *     |                       |" << endl;
+	cout << "|                    +-------------------+                       |" << endl;
+	cout << "|                                                                |" << endl;
+	cout << "|     +----------------------------------------------------+     |" << endl;
+	cout << "|     |                   SYSTEM MENU                      |     |" << endl;
+	cout << "|     +----------------------------------------------------+     |" << endl;
+	cout << "|     |  1.  Crear la pila de procesos                     |     |" << endl;
+	cout << "|     |  2.  Mostrar procesos en la pila                   |     |" << endl;
+	cout << "|     |  3.  Borrar pila de procesos                       |     |" << endl;
+	cout << "|     |  4.  Simular el paso de N minutos                  |     |" << endl;
+	cout << "|     |  5.  Mostrar datos lista nucleos                   |     |" << endl;
+	cout << "|     |  6.  Consultar nucleos con mas y menos procesos    |     |" << endl;
+	cout << "|     |  7.  Consultar numero de nucleos operativos        |     |" << endl;
+	cout << "|     |  8.  Añadir un proceso al árbol de búsqueda        |     |" << endl;
+	cout << "|     |  9.  Mostrar datos del árbol (por priodidad)       |     |" << endl;
+	cout << "|     |  10. Mostrar procesos con la prioridad dada        |     |" << endl;
+	cout << "|     |  11. Mostrar órdenes de prioridad que han tenido   |     |" << endl;
+	cout << "|     |      un proceso ejecutado						    |     |" << endl;
+	cout << "|     |  12. Nivel de priodidad con mayor y menor número   |     |" << endl;
+	cout << "|     |      de procesos								    |     |" << endl;
+	cout << "|     |  13. Tiempo promedio de procesos con una 		    |     |" << endl;
+	cout << "|     |      prioridad 								    |     |" << endl;
+	cout << "|     |  14. Tiempo promedio de cada nivel en  		    |     |" << endl;
+	cout << "|     |      preorden 								        |     |" << endl;
+	cout << "|     |  15. Ejecutar todos los procesos                   |     |" << endl;
+	cout << "|     |  0.  Salir                                         |     |" << endl;
+	cout << "|     +----------------------------------------------------+     |" << endl;
+	cout << "|          +------------------------------------------+          |" << endl;
+	cout << "|          |  Selecciona una opcion y presiona Enter  |          |" << endl;
+	cout << "|          +------------------------------------------+          |" << endl;
+	cout << "+----------------------------------------------------------------+" << endl;
+	cout << "" << endl;
+	cout << "" << endl;
+	cout << "" << endl;
 }
 
 int main()
@@ -57,7 +68,7 @@ int main()
 
 	cout << "\n====================================================================" << endl;
 	cout << "ADVERTENCIA: Ya se han creado 10 procesos en la pila de procesos." << endl;
-    cout << "Los procesos que se crean son siempre los mismos." << endl;
+	cout << "Los procesos que se crean son siempre los mismos." << endl;
 	cout << "Crear la pila de procesos añadirá los mismos 10 procesos a la pila."
 		 << endl;
 	cout << "====================================================================\n"
@@ -70,7 +81,8 @@ int main()
 		cout << "                Selecciona una opcion: ";
 		cin >> opcion;
 		cout << "       +------------------------------------------+          " << endl;
-		cout << "=================================================================================================================================\n" << endl;
+		cout << "=================================================================================================================================\n"
+			 << endl;
 
 		switch (opcion)
 		{
@@ -99,6 +111,43 @@ int main()
 			sistema.mostrarNumNucleos();
 			break;
 		case 8:
+			int PID, PPID, inicio, tiempoVida, prioridad, nucleo, tiempoEjecucion;
+			cout << "Introduce el PID: " << endl;
+			cin >> PID;
+			cout << "\nIntroduce el PPID: " << endl;
+			cin >> PPID;
+			cout << "\nIntroduce el tiempo hasta inicio: " << endl;
+			cin >> inicio;
+			cout << "\nIntroduce el tiempo de vida: " << endl;
+			cin >> tiempoVida;
+			cout << "\nIntroduce la prioridad: " << endl;
+			cin >> prioridad;
+			cout << "\nIntroduce el nucleo: " << endl;
+			cin >> nucleo;
+			cout << "\nIntroduce el tiempo de ejecucion: " << endl;
+			cin >> tiempoEjecucion;
+
+			sistema.insertarProceso(PID, PPID, inicio, tiempoVida, prioridad, nucleo, tiempoEjecucion);
+
+			break;
+		case 9:
+			sistema.mostrarArbolInorden();
+			break;
+		case 10:
+
+			break;
+		case 11:
+
+			break;
+		case 12:
+
+			break;
+		case 13:
+
+			break;
+		case 14:
+			break;
+		case 15:
 			sistema.ejecutarProcesos();
 			break;
 		case 0:

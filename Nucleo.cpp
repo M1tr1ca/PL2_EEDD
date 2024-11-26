@@ -133,3 +133,11 @@ Proceso Nucleo::terminarProcesoActual()
     }
     return procesoTerminado;
 }
+
+void Nucleo::aumentarTiempoEjecucion()
+{
+    if (puntProcesoActual != NULL)
+    {
+        puntProcesoActual->aumentarTiempoEjecucion();
+    }
+}

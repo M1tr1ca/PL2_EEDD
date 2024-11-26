@@ -95,20 +95,22 @@ void ListaProcesos::resto()
 
 void ListaProcesos::mostrarTodo()
 {
-    if (esVacia())
+    if (!esVacia())
     {
-        throw runtime_error("La lista de procesos está vacía");
-    }
-
-    lnodop actual = cima;
-    while (actual != NULL)
-    {
+        lnodop actual = cima;
+        while (actual != NULL)
+        {
+            cout << "---------------------------------" << endl;
+            actual->valor.mostrarInformacion();
+            actual = actual->siguiente;
+        }
         cout << "---------------------------------" << endl;
-        actual->valor.mostrarInformacion();
-        actual = actual->siguiente;
+        cout << endl;
     }
-    cout << "---------------------------------" << endl;
-    cout << endl;
+    else
+    {
+        cout << "La lista de procesos está vacía" << endl;
+    }
 }
 
 void ListaProcesos::eult()

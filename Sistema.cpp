@@ -66,6 +66,8 @@ void Sistema::simularMinutos(int n)
         minutos++;
         cout << "Simulando minuto " << minutos << "...         " << endl;
 
+        nucleos.aumentarTiempoEjecucion();
+
         // Simular los procesos en ejecución
         ListaProcesos terminados = nucleos.reducirTiempoVida();
         while (!terminados.esVacia())
@@ -73,6 +75,7 @@ void Sistema::simularMinutos(int n)
             Proceso proceso = terminados.prim();
             terminados.resto();
             procesosEjecutados.insertar(proceso);
+            procesosEjecutados.mostrarArbolInorden(&procesosEjecutados);
         }
 
         if (!pilaProcesos.esVacia())
@@ -166,4 +169,17 @@ void Sistema::mostrarNumNucleos()
 int Sistema::getMinutos()
 {
     return minutos;
+}
+
+void Sistema::mostrarArbolInorden()
+{
+    cout << "Procesos ejecutados:" << endl;
+    procesosEjecutados.mostrarArbolInorden(&procesosEjecutados);
+}
+
+void Sistema::insertarProceso(int PID, int PPID, int inicio, int tiempoVida, int prioridad, int nucleo, int tiempoEjecucion)
+{
+    Proceso p(PID, PPID, inicio, tiempoVida, prioridad, nucleo);
+    p.setTiempoEjecucion(tiempoEjecucion);
+    procesosEjecutados.insertar(p);
 }

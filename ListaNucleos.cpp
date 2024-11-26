@@ -288,3 +288,13 @@ int ListaNucleos::getLongitud()
 {
     return longitud;
 }
+
+void ListaNucleos::aumentarTiempoEjecucion()
+{
+    lnodo actual = cima;
+    while (actual != NULL)
+    {
+        actual->valor.aumentarTiempoEjecucion();
+        actual = actual->siguiente;
+    }
+}

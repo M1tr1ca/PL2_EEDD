@@ -31,6 +31,7 @@ public:
     Nucleo *buscarMenosCola();
     Nucleo *buscarMasCola();
     void eliminarNucleosVacios();
+    void aumentarTiempoEjecucion();
 };
 
 #endif // PILA_H

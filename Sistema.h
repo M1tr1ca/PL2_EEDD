@@ -14,10 +14,10 @@ using namespace std;
 class Sistema
 {
 private:
-    Pila pilaProcesos; // Pila de procesos ordenados por inicio
-    ListaNucleos nucleos;     // ListaNucleos de procesos en ejecucion
-    ABBProcesos procesosEjecutados;     // ABB de procesos ejecutados
-    int minutos;       // Minutos transcurridos
+    Pila pilaProcesos;              // Pila de procesos ordenados por inicio
+    ListaNucleos nucleos;           // ListaNucleos de procesos en ejecucion
+    ABBProcesos procesosEjecutados; // ABB de procesos ejecutados
+    int minutos;                    // Minutos transcurridos
 
 public:
     Sistema();
@@ -32,4 +32,6 @@ public:
     void nuevoProceso(Proceso proceso);        // AGREGA un NUEVO PROCESO a la LISTA de PROCESOS en EJECUCIÓN
     void procesoEntraEspera(Proceso *proceso); // Pone un PROCESO en ESPERA en ORDEN de PRIORIDAD
     int getMinutos();
+    void mostrarArbolInorden();
+    void insertarProceso(int PID, int PPID, int inicio, int tiempoVida, int prioridad, int nucleo, int tiempoEjecucion);
 };
