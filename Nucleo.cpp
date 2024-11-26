@@ -116,9 +116,10 @@ void Nucleo::reducirTiempoVida()
     }
 }
 
-void Nucleo::terminarProcesoActual()
+Proceso Nucleo::terminarProcesoActual()
 {
     cout << "Proceso " << puntProcesoActual->getPID() << " terminado en el núcleo " << ID << endl;
+    Proceso procesoTerminado = *puntProcesoActual;
     if (colaEspera.esVacia())
     {
         delete puntProcesoActual;
@@ -130,4 +131,5 @@ void Nucleo::terminarProcesoActual()
         puntProcesoActual = new Proceso(colaEspera.desencolar());
         cout << "Proceso " << puntProcesoActual->getPID() << " entró en ejecución en el núcleo " << ID << endl;
     }
+    return procesoTerminado;
 }

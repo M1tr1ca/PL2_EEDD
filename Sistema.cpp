@@ -7,8 +7,6 @@
 
 Sistema::Sistema()
 {
-    // pilaProcesos = Pila();
-    // nucleos = ListaNucleos();
     minutos = 0;
     crearProcesos();
 }
@@ -33,7 +31,8 @@ void Sistema::mostrarPila()
 {
     if (!pilaProcesos.esVacia())
     {
-        cout << "Procesos en la pila:\n" << endl;
+        cout << "Procesos en la pila:\n"
+             << endl;
         pilaProcesos.mostrarTodo();
     }
     else
@@ -68,7 +67,13 @@ void Sistema::simularMinutos(int n)
         cout << "Simulando minuto " << minutos << "...         " << endl;
 
         // Simular los procesos en ejecución
-        nucleos.reducirTiempoVida();
+        ListaProcesos terminados = nucleos.reducirTiempoVida();
+        while (!terminados.esVacia())
+        {
+            Proceso proceso = terminados.prim();
+            terminados.resto();
+            procesosEjecutados.insertar(proceso);
+        }
 
         if (!pilaProcesos.esVacia())
         {
@@ -121,11 +126,8 @@ void Sistema::procesoEntraEspera(Proceso *p)
     Nucleo *n = nucleos.buscarMenosCola();
     if (n->numeroProcesosTotales() >= 3) // El proceso ejecutándose también cuenta
     {
-        Nucleo nuevoNucleo;
-        p->setNucleo(nuevoNucleo.getId());
-        nuevoNucleo.setProcesoActual(p);
-        nucleos.izquierda(nuevoNucleo);
-        cout << "Proceso " << p->getPID() << " entró en ejecución en el núcleo " << nuevoNucleo.getId() << endl;
+        nucleos.izqProceso(p);
+        cout << "Proceso " << p->getPID() << " entró en ejecución en el núcleo " << p->getNucleo() << endl;
     }
     else if (n->numeroProcesosTotales() == 0)
     {

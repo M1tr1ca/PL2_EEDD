@@ -7,8 +7,8 @@ using namespace std;
 
 ListaProcesos::ListaProcesos()
 {
-    cima = new NodoListaProcesos();
-    longitud = 1;
+    cima = NULL;
+    longitud = 0;
 }
 
 ListaProcesos::~ListaProcesos()

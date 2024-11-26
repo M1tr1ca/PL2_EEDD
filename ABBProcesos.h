@@ -6,20 +6,27 @@ class ABBProcesos
 {
 private:
     int prioridad;
-    ListaProcesos procesos;
+    ListaProcesos listaProcesos;
     ABBProcesos *izquierda;
     ABBProcesos *derecha;
 
 public:
     ABBProcesos();
+    ABBProcesos(int prioridad);
     ~ABBProcesos();
 
     bool esVacio();
     ABBProcesos *izq();
     ABBProcesos *der();
-    ListaProcesos getRaiz();
+    ListaProcesos getProcesos();
     int getPrioridad();
     int getAltura();
+
+    void insertar(Proceso p);
+
+    void mostrarArbolPreorden(ABBProcesos* nodo);
+    void mostrarArbolPostorden(ABBProcesos* nodo);
+    void mostrarArbolInorden(ABBProcesos* nodo);
 };
 
 #endif // ABBPROCESOS_H

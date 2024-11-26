@@ -1,5 +1,6 @@
 #include <iostream>
 #include "ListaNucleos.h"
+#include "ListaProcesos.h"
 #include "NodoListaNucleos.h"
 #include "Nucleo.h"
 
@@ -29,6 +30,16 @@ bool ListaNucleos::esVacia()
 void ListaNucleos::izquierda(Nucleo p)
 {
     lnodo nuevo = new NodoListaNucleos(p, cima);
+    cima = nuevo;
+    longitud++;
+}
+
+void ListaNucleos::izqProceso(Proceso *p)
+{
+    lnodo nuevo = new NodoListaNucleos();
+    nuevo->siguiente = cima;
+    nuevo->valor.setProcesoActual(p);
+    p->setNucleo(nuevo->valor.getId());
     cima = nuevo;
     longitud++;
 }
@@ -141,7 +152,7 @@ void ListaNucleos::eult()
     longitud--;
 }
 
-void ListaNucleos::reducirTiempoVida()
+ListaProcesos ListaNucleos::reducirTiempoVida()
 {
     if (esVacia())
     {
@@ -158,14 +169,18 @@ void ListaNucleos::reducirTiempoVida()
 
     // Sacar procesos terminados de ejecutar y meter los de la cola de espera
     actual = cima;
+    ListaProcesos procesosTerminados;
     while (actual != NULL)
     {
         if (actual->valor.getPuntProcesoActual() != NULL && actual->valor.getPuntProcesoActual()->getTiempoVida() == 0)
         {
-            actual->valor.terminarProcesoActual();
+            Proceso procTerm = actual->valor.terminarProcesoActual();
+            procesosTerminados.izquierda(procTerm);
         }
         actual = actual->siguiente;
     }
+
+    return procesosTerminados;
 }
 
 Nucleo *ListaNucleos::buscarMenosCola()

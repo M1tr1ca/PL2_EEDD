@@ -5,7 +5,6 @@ using namespace std;
 
 NodoListaProcesos::NodoListaProcesos()
 {
-    // valor = Nucleo();
     siguiente = NULL;
 }
 

@@ -6,6 +6,7 @@
 #include "Proceso.h"
 #include "Pila.h"
 #include "ListaNucleos.h"
+#include "ABBProcesos.h"
 #include <iostream>
 
 using namespace std;
@@ -15,6 +16,7 @@ class Sistema
 private:
     Pila pilaProcesos; // Pila de procesos ordenados por inicio
     ListaNucleos nucleos;     // ListaNucleos de procesos en ejecucion
+    ABBProcesos procesosEjecutados;     // ABB de procesos ejecutados
     int minutos;       // Minutos transcurridos
 
 public:

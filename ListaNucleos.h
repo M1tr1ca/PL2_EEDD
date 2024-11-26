@@ -3,6 +3,7 @@
 #include "NodoListaNucleos.h"
 #include "Proceso.h"
 #include "Nucleo.h"
+#include "ListaProcesos.h"
 
 class ListaNucleos
 {
@@ -16,6 +17,7 @@ public:
 
     bool esVacia();
     void izquierda(Nucleo p);
+    void izqProceso(Proceso *p);
     void derecha(Nucleo p);
     Nucleo prim();
     Nucleo ult();
@@ -25,7 +27,7 @@ public:
     int getLongitud();
     
     void mostrarTodo();
-    void reducirTiempoVida();
+    ListaProcesos reducirTiempoVida();
     Nucleo *buscarMenosCola();
     Nucleo *buscarMasCola();
     void eliminarNucleosVacios();

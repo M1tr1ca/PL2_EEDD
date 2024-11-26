@@ -8,9 +8,9 @@
 class Nucleo
 {
 private:
-    int ID;                 // Identificador del núcleo
+    int ID;                     // Identificador del núcleo
     Proceso *puntProcesoActual; // Proceso actualmente en ejecución en el núcleo
-    Cola colaEspera;        // Cola de procesos en espera
+    Cola colaEspera;            // Cola de procesos en espera
 
 public:
     // Constructor que recibe un ID
@@ -32,16 +32,16 @@ public:
     Proceso obtenerProcesoDeCola();
 
     // Consultas sobre el estado del núcleo
-    bool estaOcupado();           // Retorna true si hay un proceso ejecutándose
+    bool estaOcupado();          // Retorna true si hay un proceso ejecutándose
     int numeroProcesosTotales(); // Número de procesos en la cola
     int numeroProcesosEspera();  // Número total de procesos en el núcleo
 
     // Mostrar información del núcleo
     void mostrarInformacion();
     void reducirTiempoVida(); // Reduce el tiempo restante del proceso actual
-    
+
     // Terminar proceso y meter el siguiente de la cola
-    void terminarProcesoActual();
+    Proceso terminarProcesoActual();
 };
 
 #endif // NUCLEO_H

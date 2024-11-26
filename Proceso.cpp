@@ -12,6 +12,7 @@ Proceso::Proceso(int pid, int ppid, int ini, int vida, int pri, int nuc)
     tiempoVida = vida,
     prioridad = pri,
     nucleo = nuc;
+    tiempoEjecucion = 0;
 }
 
 // Constructor vacío
@@ -23,6 +24,7 @@ Proceso::Proceso()
     tiempoVida = -1;
     prioridad = -1;
     nucleo = -1;
+    tiempoEjecucion = 0;
 }
 
 Proceso::~Proceso()
@@ -117,4 +119,19 @@ void Proceso::reducirTiempoInicio()
 void Proceso::reducirTiempoVida()
 {
     tiempoVida--;
+}
+
+int Proceso::getTiempoEjecucion()
+{
+    return tiempoEjecucion;
+}
+
+void Proceso::setTiempoEjecucion(int tiempoEjecucion)
+{
+    this->tiempoEjecucion = tiempoEjecucion;
+}
+
+void Proceso::aumentarTiempoEjecucion()
+{
+    tiempoEjecucion++;
 }

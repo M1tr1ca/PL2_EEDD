@@ -6,7 +6,14 @@ using namespace std;
 
 ABBProcesos::ABBProcesos()
 {
-    prioridad = 0;
+    prioridad = 4;
+    izquierda = nullptr;
+    derecha = nullptr;
+}
+
+ABBProcesos::ABBProcesos(int prioridad)
+{
+    this->prioridad = prioridad;
     izquierda = nullptr;
     derecha = nullptr;
 }
@@ -19,7 +26,7 @@ ABBProcesos::~ABBProcesos()
 
 bool ABBProcesos::esVacio()
 {
-    return procesos.esVacia();
+    return listaProcesos.esVacia();
 }
 
 ABBProcesos *ABBProcesos::izq()
@@ -32,9 +39,9 @@ ABBProcesos *ABBProcesos::der()
     return derecha;
 }
 
-ListaProcesos ABBProcesos::getRaiz()
+ListaProcesos ABBProcesos::getProcesos()
 {
-    return procesos;
+    return listaProcesos;
 }
 
 int ABBProcesos::getPrioridad()
@@ -53,4 +60,58 @@ int ABBProcesos::getAltura()
     int alturaDer = derecha->getAltura();
 
     return 1 + (alturaIzq > alturaDer ? alturaIzq : alturaDer);
+}
+
+void ABBProcesos::insertar(Proceso p)
+{
+    if (p.getPrioridad() < prioridad)
+    {
+        if (izquierda == nullptr)
+        {
+            izquierda = new ABBProcesos(p.getPrioridad());
+        }
+        izquierda->insertar(p);
+    }
+    else if (p.getPrioridad() > prioridad)
+    {
+        if (derecha == nullptr)
+        {
+            derecha = new ABBProcesos();
+        }
+        derecha->insertar(p);
+    }
+    else
+    {
+        listaProcesos.izquierda(p);
+    }
+}
+
+void ABBProcesos::mostrarArbolPreorden(ABBProcesos *nodo)
+{
+    if (nodo != nullptr)
+    {
+        nodo->getProcesos().mostrarTodo();
+        mostrarArbolPreorden(nodo->izq());
+        mostrarArbolPreorden(nodo->der());
+    }
+}
+
+void ABBProcesos::mostrarArbolInorden(ABBProcesos *nodo)
+{
+    if (nodo != nullptr)
+    {
+        mostrarArbolInorden(nodo->izq());
+        listaProcesos.mostrarTodo();
+        mostrarArbolInorden(nodo->der());
+    }
+}
+
+void ABBProcesos::mostrarArbolPostorden(ABBProcesos *nodo)
+{
+    if (nodo != nullptr)
+    {
+        mostrarArbolPostorden(nodo->izq());
+        mostrarArbolPostorden(nodo->der());
+        listaProcesos.mostrarTodo();
+    }
 }
