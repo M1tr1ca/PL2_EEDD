@@ -84,6 +84,9 @@ int main()
 		cout << "=================================================================================================================================\n"
 			 << endl;
 
+		int n;
+		int PID, PPID, inicio, tiempoVida, prioridad, nucleo, tiempoEjecucion;
+
 		switch (opcion)
 		{
 		case 1:
@@ -96,7 +99,6 @@ int main()
 			sistema.borrarPila();
 			break;
 		case 4:
-			int n;
 			cout << "Introduce N minutos: ";
 			cin >> n;
 			sistema.simularMinutos(n);
@@ -111,7 +113,6 @@ int main()
 			sistema.mostrarNumNucleos();
 			break;
 		case 8:
-			int PID, PPID, inicio, tiempoVida, prioridad, nucleo, tiempoEjecucion;
 			cout << "Introduce el PID: " << endl;
 			cin >> PID;
 			cout << "\nIntroduce el PPID: " << endl;
@@ -134,10 +135,12 @@ int main()
 			sistema.mostrarArbolInorden();
 			break;
 		case 10:
-
+			cout << "Introduce la prioridad: ";
+			cin >> prioridad;
+			sistema.mostrarProcesosPrioridad(prioridad);
 			break;
 		case 11:
-
+			sistema.mostrarNiveles();
 			break;
 		case 12:
 

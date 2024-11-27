@@ -182,3 +182,14 @@ void Sistema::insertarProceso(int PID, int PPID, int inicio, int tiempoVida, int
     p.setTiempoEjecucion(tiempoEjecucion);
     procesosEjecutados.insertar(p);
 }
+
+void Sistema::mostrarProcesosPrioridad(int prioridad)
+{
+    procesosEjecutados.mostrarProcesosPorPrioridad(prioridad);
+}
+
+void Sistema::mostrarNiveles()
+{
+    cout << "Mostrando niveles del árbol de procesos ejecutados:" << endl;
+    procesosEjecutados.mostrarNivelesInorden(&procesosEjecutados, 0);
+}

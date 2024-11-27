@@ -133,3 +133,45 @@ void ABBProcesos::mostrarArbolPostorden(ABBProcesos *nodo)
         nodo->listaProcesos.mostrarTodo();
     }
 }
+
+void ABBProcesos::mostrarProcesosPorPrioridad(int prioridad)
+{
+    if (prioridad < this->prioridad)
+    {
+        if (izquierda != nullptr)
+        {
+            izquierda->mostrarProcesosPorPrioridad(prioridad);
+        }
+    }
+    else if (prioridad > this->prioridad)
+    {
+        if (derecha != nullptr)
+        {
+            derecha->mostrarProcesosPorPrioridad(prioridad);
+        }
+    }
+    else
+    {
+        cout << "Prioridad: " << prioridad << endl;
+        listaProcesos.mostrarTodo();
+    }
+}
+
+void ABBProcesos::mostrarNivelesInorden(ABBProcesos *nodo, int nivel)
+{
+    if (nodo != nullptr)
+    {
+        if (nodo->izq() != nullptr)
+        {
+            mostrarNivelesInorden(nodo->izq(), nivel + 1);
+        }
+        if (!nodo->esVacio())
+        {
+            cout << ": Prioridad " << nodo->getPrioridad() << endl;
+        }
+        if (nodo->der() != nullptr)
+        {
+            mostrarNivelesInorden(nodo->der(), nivel + 1);
+        }
+    }
+}

@@ -34,4 +34,6 @@ public:
     int getMinutos();
     void mostrarArbolInorden();
     void insertarProceso(int PID, int PPID, int inicio, int tiempoVida, int prioridad, int nucleo, int tiempoEjecucion);
+    void mostrarProcesosPrioridad(int prioridad);
+    void mostrarNiveles();
 };
