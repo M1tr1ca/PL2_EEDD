@@ -83,8 +83,6 @@ void ABBProcesos::insertar(Proceso p)
     else
     {
         listaProcesos.izquierda(p);
-        cout << "Proceso insertado correctamente" << p.getPID() << endl;
-        listaProcesos.mostrarTodo();
     }
 }
 

@@ -22,6 +22,7 @@ public:
     bool esVacia();
     
     void mostrarCola(); // No es correcto, se implementa para ver que está creada correctamente
+    void aumentarTiempoEjecucion();
 };
 
 #endif // COLA_H

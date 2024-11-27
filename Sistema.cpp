@@ -75,7 +75,6 @@ void Sistema::simularMinutos(int n)
             Proceso proceso = terminados.prim();
             terminados.resto();
             procesosEjecutados.insertar(proceso);
-            procesosEjecutados.mostrarArbolInorden(&procesosEjecutados);
         }
 
         if (!pilaProcesos.esVacia())

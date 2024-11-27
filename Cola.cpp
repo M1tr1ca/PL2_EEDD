@@ -109,3 +109,13 @@ Proceso Cola::frente()
     }
     return primero->elemento; // Retorna el valor en la cima de la pila
 }
+
+void Cola::aumentarTiempoEjecucion()
+{
+    NodoCola *aux = primero;
+    while (aux)
+    {
+        aux->elemento.aumentarTiempoEjecucion();
+        aux = aux->siguiente;
+    }
+}

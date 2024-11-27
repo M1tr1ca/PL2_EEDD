@@ -46,7 +46,8 @@ void Proceso::mostrarInformacion()
          << "Minutos hasta inicio: " << setw(3) << inicio << " minutos | "
          << "Tiempo de vida: " << setw(3) << tiempoVida << " minutos | "
          << "Prioridad: " << prioridad << " | "
-         << "Núcleo: " << setw(2) << nucleo << endl;
+         << "Núcleo: " << setw(2) << nucleo << " | "
+         << "Tiempo de ejecución: " << setw(3) << tiempoEjecucion << " minutos" << endl;
 }
 
 // Getters

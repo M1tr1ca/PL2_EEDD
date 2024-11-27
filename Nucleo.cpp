@@ -140,4 +140,5 @@ void Nucleo::aumentarTiempoEjecucion()
     {
         puntProcesoActual->aumentarTiempoEjecucion();
     }
+    colaEspera.aumentarTiempoEjecucion();
 }
