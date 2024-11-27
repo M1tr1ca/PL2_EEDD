@@ -29,6 +29,7 @@ public:
     void mostrarArbolInorden(ABBProcesos *nodo);
     void mostrarNivelesInorden(ABBProcesos *nodo, int nivel);
     void mostrarProcesosPorPrioridad(int prioridad);
+    float calcMediaPrioridad(int prioridad);
 };
 
 #endif // ABBPROCESOS_H

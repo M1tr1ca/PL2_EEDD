@@ -146,7 +146,9 @@ int main()
 
 			break;
 		case 13:
-
+			cout << "Introduce la prioridad: ";
+			cin >> prioridad;
+			sistema.mediaPrioridad(prioridad);
 			break;
 		case 14:
 			break;

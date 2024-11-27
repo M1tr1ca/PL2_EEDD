@@ -167,11 +167,34 @@ void ABBProcesos::mostrarNivelesInorden(ABBProcesos *nodo, int nivel)
         }
         if (!nodo->esVacio())
         {
-            cout << ": Prioridad " << nodo->getPrioridad() << endl;
+            cout << "Prioridad " << nodo->getPrioridad() << endl;
         }
         if (nodo->der() != nullptr)
         {
             mostrarNivelesInorden(nodo->der(), nivel + 1);
         }
     }
+}
+
+float ABBProcesos::calcMediaPrioridad(int prioridad)
+{
+    if (prioridad < this->prioridad)
+    {
+        if (izquierda != nullptr)
+        {
+            return izquierda->calcMediaPrioridad(prioridad);
+        }
+    }
+    else if (prioridad > this->prioridad)
+    {
+        if (derecha != nullptr)
+        {
+            return derecha->calcMediaPrioridad(prioridad);
+        }
+    }
+    else
+    {
+        return listaProcesos.calcMediaPrioridad(prioridad);
+    }
+    return 0;
 }

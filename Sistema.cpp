@@ -193,3 +193,8 @@ void Sistema::mostrarNiveles()
     cout << "Mostrando niveles del árbol de procesos ejecutados:" << endl;
     procesosEjecutados.mostrarNivelesInorden(&procesosEjecutados, 0);
 }
+
+void Sistema::mediaPrioridad(int prioridad)
+{
+    cout << "La media de tiempo de los procesos con prioridad " << prioridad << " es: " << procesosEjecutados.calcMediaPrioridad(prioridad) << endl;
+}

@@ -147,3 +147,22 @@ int ListaProcesos::getLongitud()
 {
     return longitud;
 }
+
+float ListaProcesos::calcMediaPrioridad(int prioridad)
+{
+    float suma = 0;
+    float contador = 0;
+
+    if (!esVacia())
+    {
+        lnodop actual = cima;
+        while (actual != NULL)
+        {
+            suma += actual->valor.getTiempoEjecucion();
+            contador++;
+            actual = actual->siguiente;
+        }
+    }
+
+    return suma / contador;
+}
