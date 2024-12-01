@@ -8,43 +8,48 @@ void mostrarMenu(int minutos)
 {
 	int horas = minutos / 60 % 24;
 	int min = minutos % 60;
+	/* * " << (horas >= 10 ? "" : "0") << horas << ":" << (min >= 10 ? "" : "0") << min << " *  */
 
 	cout << "" << endl;
 	cout << "" << endl;
 	cout << "" << endl;
-	cout << " +----------------------------------------------------------------+" << endl;
-	cout << "|                    +-------------------+                       |" << endl;
-	cout << "|                    |     * " << (horas >= 10 ? "" : "0") << horas << ":" << (min >= 10 ? "" : "0") << min << " *     |                       |" << endl;
-	cout << "|                    +-------------------+                       |" << endl;
-	cout << "|                                                                |" << endl;
-	cout << "|     +----------------------------------------------------+     |" << endl;
-	cout << "|     |                   SYSTEM MENU                      |     |" << endl;
-	cout << "|     +----------------------------------------------------+     |" << endl;
-	cout << "|     |  1.  Crear la pila de procesos                     |     |" << endl;
-	cout << "|     |  2.  Mostrar procesos en la pila                   |     |" << endl;
-	cout << "|     |  3.  Borrar pila de procesos                       |     |" << endl;
-	cout << "|     |  4.  Simular el paso de N minutos                  |     |" << endl;
-	cout << "|     |  5.  Mostrar datos lista nucleos                   |     |" << endl;
-	cout << "|     |  6.  Consultar nucleos con mas y menos procesos    |     |" << endl;
-	cout << "|     |  7.  Consultar numero de nucleos operativos        |     |" << endl;
-	cout << "|     |  8.  Añadir un proceso al árbol de búsqueda        |     |" << endl;
-	cout << "|     |  9.  Mostrar datos del árbol (por priodidad)       |     |" << endl;
-	cout << "|     |  10. Mostrar procesos con la prioridad dada        |     |" << endl;
-	cout << "|     |  11. Mostrar órdenes de prioridad que han tenido   |     |" << endl;
-	cout << "|     |      un proceso ejecutado                          |     |" << endl;
-	cout << "|     |  12. Nivel de priodidad con mayor y menor número   |     |" << endl;
-	cout << "|     |      de procesos                                   |     |" << endl;
-	cout << "|     |  13. Tiempo promedio de procesos con una           |     |" << endl;
-	cout << "|     |      prioridad                                     |     |" << endl;
-	cout << "|     |  14. Tiempo promedio de cada nivel en              |     |" << endl;
-	cout << "|     |      preorden                                      |     |" << endl;
-	cout << "|     |  15. Ejecutar todos los procesos                   |     |" << endl;
-	cout << "|     |  0.  Salir                                         |     |" << endl;
-	cout << "|     +----------------------------------------------------+     |" << endl;
-	cout << "|          +------------------------------------------+          |" << endl;
-	cout << "|          |  Selecciona una opcion y presiona Enter  |          |" << endl;
-	cout << "|          +------------------------------------------+          |" << endl;
-	cout << "+----------------------------------------------------------------+" << endl;
+	
+	cout << R"(
++............................................................................................................................................+	
+|                                        ____  _             _  __ _               _                                                         |
+|                                       |  _ \| | __ _ _ __ (_)/ _(_) ___ __ _  __| | ___  _ __                                              |
+|                                       | |_) | |/ _` | '_ \| | |_| |/ __/ _` |/ _` |/ _ \| '__|                                             |
+|                                       |  __/| | (_| | | | | |  _| | (_| (_| | (_| | (_) | |                                                |
+|                                       |_|   |_|\__,_|_| |_|_|_| |_|\___\__,_|\__,_|\___/|_|                                                |
++............................................................................................................................................+
+.                                                                                                                                            .
+.                        ==--===+++* ++                                                                                                      .
+.                  *++ +**=-----=--==+-===-                                   +----------------------------------------------------+         .
+.            +=-=+==+=+#**====-=--=-==**=--------=-                           |                   System Menu                      |         .
+.           *+==----==*%%#+====+**+**#*+-------===+-----                      +----------------------------------------------------+         .
+.          +*****++++*#%@@@@%%@@@@%#%@@%*=+=----=++=------                    | 1.  Crear la pila de procesos                      |         .
+.         *++++===+==+=*%@@@@#%%%@@@%@@%#*++=+==+==***++==                    | 2.  Mostrar procesos en la pila                    |         .
+.        %%#+===------==*%@@+===-------#%%#%#*+*%@%#*-==                      | 3.  Borrar pila de procesos                        |         .
+.        #**+*+=--====+*%%%*+-*+----==--*%@@@%%@@%*+=----=-=                  | 4.  Simular el paso de N minutos                   |         .
+.         *##**######%%+=*++@#%%*#++##*+#%@@@@@@%*==-----++++                 | 5.  Mostrar datos lista nucelos                    |         .
+.    ***+=--=----==--=#@@##%@@@@@@@@@@@@@%%@@@@@%#*=--===**##*                | 6.  Consultar nucleos con mas y menos procesos     |         .
+.    ++#=---=----=--=+#%@@@@%+=--+-=---=--+==#%%%%%#**###%@@#**               | 7.  Consultar numero de nucleos operativos         |         .
+.   +*%**==---====***#@@@@@@+*--==-*--+---+---++##%@@@%%@@%%                  | 8.  Anaadir un proceso al arbol de busqueda        |         .
+.   =+*%+++++*##**##%@@@@#@%*=++=+***#=*+=--===++*#%@@@@%*+++**               | 9.  Mostrar datos del arbol (por prioridad)        |         .
+.  +#%@@@%@@@@@@@@@@@#*+=+*%%+*++=#%@@%*+##%%%#%%@@@@%*+*+++*+*               | 10. Mostrar procesos con la prioridad dada         |         .
+.   +**%@@@@%@@@%*+=*%%%%#@@@@*#*%@@@@@@@%%@@@%@@@@@@@#*#%###+                | 11. Mostrar ordenes de prioridad que               |         .
+.     +%@###%##+==+*#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%%%                  |     han tenido un proceso ejecutado                |         .
+.          **#****#%%%@@%%@@@@@@@@@@@@@@@@@#*#%%%%%%#%%##%                    | 12. Nivel de prioridad con mayor y menor numero    |         .
+.               *     %##*+**@@@@@@@@@@@@@#  **####                           |     de procesos                                    |         .
+.                             @@@@@@@@@                                       | 13. Tiempo promedio de procesos con una prioridad  |         .
+.                             @@@@@@@                                         | 14. Tiempo promedio de cada nivel en preorden      |         .
+.                             @@@@@                                           | 15. Ejecutar todos los procesos                    |         .
+.                            @@@@@@@@                                         | 0.  Salir                                          |         .
+.                            @@@@@@@@                                         +----------------------------------------------------+         .
+.                          @@@@@@@@@@@                                                                                                       .
+.                      @@@@@@@@@@@@@@@@@@@                                                          ..........                               . )" << endl;
+cout<< ".                                                                                                   |  " << (horas >= 10 ? "" : "0") << horas << ":" << (min >= 10 ? "" : "0") << min << " |                               ."<<endl;
+cout<<"+............................................................................................................................................+"<<endl;
 	cout << "" << endl;
 	cout << "" << endl;
 	cout << "" << endl;
@@ -69,7 +74,7 @@ int main()
 	cout << "\n====================================================================" << endl;
 	cout << "ADVERTENCIA: Ya se han creado 10 procesos en la pila de procesos." << endl;
 	cout << "Los procesos que se crean son siempre los mismos." << endl;
-	cout << "Crear la pila de procesos añadirá los mismos 10 procesos a la pila."
+	cout << "Crear la pila de procesos annadira los mismos 10 procesos a la pila."
 		 << endl;
 	cout << "====================================================================\n"
 		 << endl;
