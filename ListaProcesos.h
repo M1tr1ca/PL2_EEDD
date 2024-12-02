@@ -24,7 +24,7 @@ public:
     int getLongitud();
     
     void mostrarTodo();
-    float calcMediaPrioridad(int prioridad);
+    float calcMedia();
 };
 
 #endif // LISTAPROCESOS_H

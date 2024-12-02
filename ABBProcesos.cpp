@@ -136,24 +136,14 @@ void ABBProcesos::mostrarArbolPostorden(ABBProcesos *nodo)
 
 void ABBProcesos::mostrarProcesosPorPrioridad(int prioridad)
 {
-    if (prioridad < this->prioridad)
+    ABBProcesos *nodo = buscar(prioridad);
+    if (nodo != nullptr)
     {
-        if (izquierda != nullptr)
-        {
-            izquierda->mostrarProcesosPorPrioridad(prioridad);
-        }
-    }
-    else if (prioridad > this->prioridad)
-    {
-        if (derecha != nullptr)
-        {
-            derecha->mostrarProcesosPorPrioridad(prioridad);
-        }
+        nodo->listaProcesos.mostrarTodo();
     }
     else
     {
-        cout << "Prioridad: " << prioridad << endl;
-        listaProcesos.mostrarTodo();
+        cout << "No hay procesos con prioridad " << prioridad << endl;
     }
 }
 
@@ -178,23 +168,43 @@ void ABBProcesos::mostrarNivelesInorden(ABBProcesos *nodo, int nivel)
 
 float ABBProcesos::calcMediaPrioridad(int prioridad)
 {
+    ABBProcesos *nodo = buscar(prioridad);
+    if (nodo != nullptr)
+    {
+        return nodo->listaProcesos.calcMedia();
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+ABBProcesos *ABBProcesos::buscar(int prioridad)
+{
     if (prioridad < this->prioridad)
     {
         if (izquierda != nullptr)
         {
-            return izquierda->calcMediaPrioridad(prioridad);
+            return izquierda->buscar(prioridad);
         }
     }
     else if (prioridad > this->prioridad)
     {
         if (derecha != nullptr)
         {
-            return derecha->calcMediaPrioridad(prioridad);
+            return derecha->buscar(prioridad);
         }
     }
     else
     {
-        return listaProcesos.calcMediaPrioridad(prioridad);
+        if (!esVacio())
+        {
+            return this;
+        }
+        else 
+        {
+            return nullptr;
+        }
     }
-    return 0;
+    return nullptr;
 }

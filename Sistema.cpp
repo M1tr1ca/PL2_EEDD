@@ -196,5 +196,12 @@ void Sistema::mostrarNiveles()
 
 void Sistema::mediaPrioridad(int prioridad)
 {
-    cout << "La media de tiempo de los procesos con prioridad " << prioridad << " es: " << procesosEjecutados.calcMediaPrioridad(prioridad) << endl;
+    float media = procesosEjecutados.calcMediaPrioridad(prioridad);
+    if (media == 0){
+        cout << "No hay procesos con prioridad " << prioridad << endl;
+    }
+    else {
+        
+    cout << "La media de tiempo de los procesos con prioridad " << prioridad << " es: " << media << endl;
+    }
 }

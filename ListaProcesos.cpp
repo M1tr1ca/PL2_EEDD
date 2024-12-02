@@ -148,7 +148,7 @@ int ListaProcesos::getLongitud()
     return longitud;
 }
 
-float ListaProcesos::calcMediaPrioridad(int prioridad)
+float ListaProcesos::calcMedia()
 {
     float suma = 0;
     float contador = 0;
