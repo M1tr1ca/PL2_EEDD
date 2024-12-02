@@ -194,14 +194,31 @@ void Sistema::mostrarNiveles()
     procesosEjecutados.mostrarNivelesInorden(&procesosEjecutados, 0);
 }
 
+void Sistema::minMaxPrioridad()
+{
+    ABBProcesos *max = procesosEjecutados.maxProcesos();
+    ABBProcesos *min = procesosEjecutados.minProcesos();
+    if (max->esVacio())
+    {
+        cout << "No hay procesos ejecutados" << endl;
+        return;
+    }
+    else
+    {
+        cout << "Prioridad menor número de procesos atendidos" << max->getPrioridad() << " con " << max->getLongitud() << " procesos" << endl;
+        cout << "Prioridad con menor número de procesos atendidos" << min->getPrioridad() << " con " << min->getLongitud() << " procesos" << endl;
+    }
+}
+
 void Sistema::mediaPrioridad(int prioridad)
 {
     float media = procesosEjecutados.calcMediaPrioridad(prioridad);
-    if (media == 0){
+    if (media == 0)
+    {
         cout << "No hay procesos con prioridad " << prioridad << endl;
     }
-    else {
-        
-    cout << "La media de tiempo de los procesos con prioridad " << prioridad << " es: " << media << endl;
+    else
+    {
+        cout << "La media de tiempo de los procesos con prioridad " << prioridad << " es: " << media << endl;
     }
 }

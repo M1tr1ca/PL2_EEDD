@@ -36,5 +36,6 @@ public:
     void insertarProceso(int PID, int PPID, int inicio, int tiempoVida, int prioridad, int nucleo, int tiempoEjecucion);
     void mostrarProcesosPrioridad(int prioridad);
     void mostrarNiveles();
+    void minMaxPrioridad();
     void mediaPrioridad(int prioridad);
 };

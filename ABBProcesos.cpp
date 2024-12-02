@@ -44,6 +44,11 @@ ListaProcesos ABBProcesos::getProcesos()
     return listaProcesos;
 }
 
+int ABBProcesos::getLongitud()
+{
+    return listaProcesos.getLongitud();
+}
+
 int ABBProcesos::getPrioridad()
 {
     return prioridad;
@@ -201,10 +206,54 @@ ABBProcesos *ABBProcesos::buscar(int prioridad)
         {
             return this;
         }
-        else 
+        else
         {
             return nullptr;
         }
     }
     return nullptr;
+}
+
+ABBProcesos *ABBProcesos::maxProcesos()
+{
+    ABBProcesos *nodo = this;
+    if (derecha != nullptr)
+    {
+        ABBProcesos *der = derecha->maxProcesos();
+        if (nodo->esVacio() || nodo->getLongitud() < der->getLongitud())
+        {
+            nodo = der;
+        }
+    }
+    if (izquierda != nullptr)
+    {
+        ABBProcesos *izq = izquierda->maxProcesos();
+        if (nodo->esVacio() || nodo->getLongitud() < izq->getLongitud())
+        {
+            nodo = izq;
+        }
+    }
+    return nodo;
+}
+
+ABBProcesos *ABBProcesos::minProcesos()
+{
+    ABBProcesos *nodo = this;
+    if (derecha != nullptr)
+    {
+        ABBProcesos *der = derecha->minProcesos();
+        if (nodo->esVacio() || nodo->getLongitud() > der->getLongitud())
+        {
+            nodo = der;
+        }
+    }
+    if (izquierda != nullptr)
+    {
+        ABBProcesos *izq = izquierda->minProcesos();
+        if (nodo->esVacio() || nodo->getLongitud() > izq->getLongitud())
+        {
+            nodo = izq;
+        }
+    }
+    return nodo;
 }

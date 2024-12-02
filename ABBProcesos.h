@@ -19,6 +19,7 @@ public:
     ABBProcesos *izq();
     ABBProcesos *der();
     ListaProcesos getProcesos();
+    int getLongitud();
     int getPrioridad();
     int getAltura();
 
@@ -31,6 +32,9 @@ public:
     void mostrarProcesosPorPrioridad(int prioridad);
     float calcMediaPrioridad(int prioridad);
     ABBProcesos *buscar(int prioridad);
+
+    ABBProcesos *maxProcesos();
+    ABBProcesos *minProcesos();
 };
 
 #endif // ABBPROCESOS_H
