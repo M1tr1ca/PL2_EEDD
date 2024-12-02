@@ -38,4 +38,5 @@ public:
     void mostrarNiveles();
     void minMaxPrioridad();
     void mediaPrioridad(int prioridad);
+    void mostrarMediaPreorden();
 };

@@ -91,21 +91,19 @@ void ABBProcesos::insertar(Proceso p)
     }
 }
 
-void ABBProcesos::mostrarArbolPreorden(ABBProcesos *nodo)
+void ABBProcesos::mostrarMediaPreorden()
 {
-    if (nodo != nullptr)
+    if (!esVacio())
     {
-        if (nodo->esVacio())
-        {
-            cout << "Prioridad: " << nodo->getPrioridad() << endl;
-            cout << "No hay procesos" << endl;
-        }
-        else
-        {
-            nodo->getProcesos().mostrarTodo();
-        }
-        mostrarArbolPreorden(nodo->izq());
-        mostrarArbolPreorden(nodo->der());
+        cout << "Media de procesos de prioridad " << getPrioridad() << ": " << listaProcesos.calcMedia() << endl;
+    }
+    if (izquierda != nullptr)
+    {
+        izquierda->mostrarMediaPreorden();
+    }
+    if (derecha != nullptr)
+    {
+        derecha->mostrarMediaPreorden();
     }
 }
 
@@ -126,16 +124,6 @@ void ABBProcesos::mostrarArbolInorden(ABBProcesos *nodo)
         {
             mostrarArbolInorden(nodo->der());
         }
-    }
-}
-
-void ABBProcesos::mostrarArbolPostorden(ABBProcesos *nodo)
-{
-    if (nodo != nullptr)
-    {
-        mostrarArbolPostorden(nodo->izq());
-        mostrarArbolPostorden(nodo->der());
-        nodo->listaProcesos.mostrarTodo();
     }
 }
 

@@ -25,8 +25,7 @@ public:
 
     void insertar(Proceso p);
 
-    void mostrarArbolPreorden(ABBProcesos *nodo);
-    void mostrarArbolPostorden(ABBProcesos *nodo);
+    void mostrarMediaPreorden();
     void mostrarArbolInorden(ABBProcesos *nodo);
     void mostrarNivelesInorden(ABBProcesos *nodo, int nivel);
     void mostrarProcesosPorPrioridad(int prioridad);

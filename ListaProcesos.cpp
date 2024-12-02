@@ -162,7 +162,8 @@ float ListaProcesos::calcMedia()
             contador++;
             actual = actual->siguiente;
         }
+        return suma / contador;
     }
 
-    return suma / contador;
+    return 0;
 }

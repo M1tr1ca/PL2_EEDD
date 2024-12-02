@@ -205,8 +205,8 @@ void Sistema::minMaxPrioridad()
     }
     else
     {
-        cout << "Prioridad menor número de procesos atendidos" << max->getPrioridad() << " con " << max->getLongitud() << " procesos" << endl;
-        cout << "Prioridad con menor número de procesos atendidos" << min->getPrioridad() << " con " << min->getLongitud() << " procesos" << endl;
+        cout << "Prioridad menor número de procesos atendidos: " << max->getPrioridad() << " con " << max->getLongitud() << " procesos" << endl;
+        cout << "Prioridad con menor número de procesos atendidos: " << min->getPrioridad() << " con " << min->getLongitud() << " procesos" << endl;
     }
 }
 
@@ -221,4 +221,10 @@ void Sistema::mediaPrioridad(int prioridad)
     {
         cout << "La media de tiempo de los procesos con prioridad " << prioridad << " es: " << media << endl;
     }
+}
+
+void Sistema::mostrarMediaPreorden()
+{
+    cout << "Mostrando la media de tiempo de los procesos por prioridad en preorden:" << endl;
+    procesosEjecutados.mostrarMediaPreorden();
 }
