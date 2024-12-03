@@ -106,6 +106,8 @@ void Sistema::ejecutarProcesos()
     {
         simularMinutos(1);
     }
+
+    cout << "Media de tiempo de ejecución de los procesos: " << procesosEjecutados.calcMediaTotal() << endl;
 }
 
 void Sistema::nuevoProceso(Proceso p)

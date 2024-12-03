@@ -25,6 +25,7 @@ public:
     
     void mostrarTodo();
     float calcMedia();
+    float tTotal();
 };
 
 #endif // LISTAPROCESOS_H

@@ -167,3 +167,20 @@ float ListaProcesos::calcMedia()
 
     return 0;
 }
+
+float ListaProcesos::tTotal()
+{
+    float suma = 0;
+
+    if (!esVacia())
+    {
+        lnodop actual = cima;
+        while (actual != NULL)
+        {
+            suma += actual->valor.getTiempoEjecucion();
+            actual = actual->siguiente;
+        }
+    }
+
+    return suma;
+}

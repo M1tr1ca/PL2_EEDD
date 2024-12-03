@@ -244,4 +244,46 @@ ABBProcesos *ABBProcesos::minProcesos()
         }
     }
     return nodo;
+
+}
+
+float ABBProcesos::calcMediaTotal()
+{
+    return this->tTotal() / this->numProcTotal();
+}
+
+int ABBProcesos::numProcTotal()
+{
+    int total = listaProcesos.getLongitud();
+
+    if (izquierda != nullptr)
+    {
+        total += izquierda->numProcTotal();
+    }
+
+    if (derecha != nullptr)
+    {
+        total += derecha->numProcTotal();
+    }
+
+    return total;
+}
+
+float ABBProcesos::tTotal()
+{
+    float total = 0;
+
+    total += listaProcesos.tTotal();
+
+    if (izquierda != nullptr)
+    {
+        total += izquierda->tTotal();
+    }
+
+    if (derecha != nullptr)
+    {
+        total += derecha->tTotal();
+    }
+
+    return total;
 }

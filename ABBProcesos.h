@@ -30,6 +30,9 @@ public:
     void mostrarNivelesInorden(ABBProcesos *nodo, int nivel);
     void mostrarProcesosPorPrioridad(int prioridad);
     float calcMediaPrioridad(int prioridad);
+    float calcMediaTotal();
+    int numProcTotal();
+    float tTotal();
     ABBProcesos *buscar(int prioridad);
 
     ABBProcesos *maxProcesos();

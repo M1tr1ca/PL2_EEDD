@@ -24,7 +24,7 @@ void mostrarMenu(int minutos)
 .                             qpp8888888888888888p                                |                   System Menu                      |     .
 .                         ppp8888888888888888888888ppppppp....ppp                 +----------------------------------------------------+     .
 .                      qp8888888888888888888888888888888888888888888qq            | 1.  Crear la pila de procesos                      |     .
-.                     p8888'   q88888b   88888pp888888p   ''888pp     ''b··       | 2.  Mostrar procesos en la pila                    |     .
+.                     p8888'   q88888b   88888pp888888p   ''888pp     ''b         | 2.  Mostrar procesos en la pila                    |     .
 .                   q888b     q88888p      '8888p 88888p       '88p               | 3.  Borrar pila de procesos                        |     .
 .                  p888       88888'8p       8888p '8888p         88qp            | 4.  Simular el paso de N minutos                   |     .
 .               pp888b       q8888   8p       8888p  8888pp           ''8b        | 5.  Mostrar datos lista nucelos                    |     .
